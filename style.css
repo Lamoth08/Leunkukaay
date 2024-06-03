@@ -41,6 +41,7 @@ body{
     border-radius: 5px;
     margin-bottom: 10px;
     border: 1px solid #f5c6cb;
+    display: none     ;
 }
 .form form .name-details{
     display: flex;
@@ -98,6 +99,13 @@ form .name-details .field:last-child{
     transform: translateY(-50%);
     cursor: pointer;
 }
+
+.form form .field i .active::before{
+    color: #333;
+    content: "\f070";
+}
+
+
 form .link{
     text-align: center;
     margin: 10px 0;
@@ -118,7 +126,7 @@ form .link{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-bottom: 1px solid #e6e6e6;
+    border-bottom: 1px solid #e6e6e6; 
 }
 .wrapper img{
     object-fit: cover;
@@ -127,7 +135,7 @@ form .link{
 :is(.users, .users-list) .content{
     display: flex;
     align-items: center;
-}
+}        
 .users header .content img{
     height: 50px;
     width: 50px;
@@ -153,11 +161,12 @@ form .link{
     display: flex;
     align-items: center;
     justify-content: space-between;
+     
 }
 .users .search .text{
     font-size: 18px;
 }  
-.users .search input{
+.users .search input{  
     position: relative;
     height: 42px;
     width: 390px;
@@ -166,22 +175,43 @@ form .link{
     font-size: 16px;
     border-radius: 5px;
     outline: none;
+    opacity:  0;
+    pointer-events:  none;
+    transition: all 0.3s ease; 
 } 
+
+.users .search  input .active{
+    opacity:  1 ;
+    pointer-events:  auto;
+     
+}
 
 .users .search button{
     width: 47px;
     height: 42px;
     border: none;
     outline: none;
-    color: #ccc;
+    color: #333;
     cursor: pointer;
-    background: #333;
+    background: #fff;
     font-size: 17px;
     border-radius:0 5px 5px 0;
 }
+
+.users .search button.active{
+    color: #fff;
+    background: #333;
+    transition: all 0.2s ease;  
+}
+
+.users .search button.active i::before {
+    content: "\f00d";   
+     
+}
+
 .users-list{
     max-height: 350px;
-    overflow-y:auto;
+    overflow-y: auto;
 }
 :is(.users-list, .chat-box)::-webkit-scrollbar{
     width: 0px;

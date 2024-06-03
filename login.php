@@ -19,7 +19,7 @@
                     </div>
                     <div class="field input">
                         <label>Password</label>
-                        <input type="text" placeholder="enter your Password">
+                        <input type="password" placeholder="enter your Password">
                         <i class="fas fa-eye"></i>
                     </div>
                     <div class="field button">
@@ -29,5 +29,6 @@
                 </form>
             </section>
         </div>
+        <script src="js/passwd-show-hide.js"></script> 
     </body> 
 </html>
